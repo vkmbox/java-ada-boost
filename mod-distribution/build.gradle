@@ -1,0 +1,18 @@
+plugins {
+    id 'distribution'
+}
+
+tasks.distZip.enabled = true
+tasks.distTar.enabled = false
+
+distributions {
+    main {
+        distributionBaseName = 'ada-boost'
+        contents {
+            from 'src/main/resources/start.cmd'
+            from { project(':lib-adaboost').jar.outputs.files }
+            from { project(':app-py4j').jar.outputs.files }
+            fileMode = 0755
+        }
+    }
+}

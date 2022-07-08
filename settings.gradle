@@ -9,3 +9,5 @@
 
 rootProject.name = 'ada-boost'
 include('lib-adaboost')
+include('app-py4j')
+include('mod-distribution')

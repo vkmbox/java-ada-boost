@@ -31,8 +31,6 @@ dependencies {
     implementation 'org.bytedeco:openblas:0.3.19-1.5.7'
     implementation 'org.bytedeco:openblas:0.3.19-1.5.7:windows-x86_64'
 
-    implementation 'net.sf.py4j:py4j:0.10.9.5'
-
     // Use JUnit Jupiter for testing.
     testCompileOnly 'org.projectlombok:lombok:1.18.22'
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.22'
@@ -57,10 +55,6 @@ tasks.named('test') {
 configurations.implementation.setCanBeResolved(true)
 
 jar {
-  manifest { 
-    attributes "Main-Class": "vkmbox.classifier.Py4jStarter"
-  }
-
   duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 
   from {
