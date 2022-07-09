@@ -8,10 +8,10 @@ import org.junit.jupiter.api.Test;
 import org.nd4j.linalg.factory.Nd4j;
 import org.nd4j.linalg.api.buffer.DataType;
 import org.nd4j.linalg.api.ndarray.INDArray;
-import vkmbox.classifier.adaboost.AdaBoostStandardClassifier;
+import vkmbox.classifier.adaboost.AdaBoostParallelClassifier;
 
 @Slf4j
-class AdaBoostStandardClassifierTest {
+class AdaBoostParallelClassifierTest {
     
     @Test 
     void nd4Call() {
@@ -30,7 +30,7 @@ class AdaBoostStandardClassifierTest {
         INDArray tmp2 = Nd4j.ones(6);
         tmp2.putScalar(new int[]{0,0}, -1);*/
 
-        AdaBoostStandardClassifier clf = new AdaBoostStandardClassifier(150);
+        AdaBoostParallelClassifier clf = new AdaBoostParallelClassifier(150);
         var result = clf.fitIND(dataX, dataY, true);
         INDArray predY = clf.predictIND(dataX);
         assertArrayEquals(dataY.toIntVector(), predY.toIntVector(), "Wrong answer");
@@ -47,7 +47,7 @@ class AdaBoostStandardClassifierTest {
                 ,{-1.43411205,  1.50037656, -1.04855297, -1.42001794}
                 ,{0.29484027, -0.79249401, -1.25279536,  0.77749036}};
         int[] dataY = new int[]{1, -1, -1, 1, 1, -1};
-        AdaBoostStandardClassifier clf = new AdaBoostStandardClassifier(150);
+        AdaBoostParallelClassifier clf = new AdaBoostParallelClassifier(150);
         var result = clf.fit(dataX, dataY);
         int[] predY = clf.predict(dataX);
         assertArrayEquals(dataY, predY, "Wrong answer");

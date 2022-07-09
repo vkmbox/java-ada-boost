@@ -2,7 +2,7 @@ package vkmbox.classifier.py4j_starter;
 
 import py4j.GatewayServer;
 import lombok.extern.slf4j.Slf4j;
-import vkmbox.classifier.ensemble.AdaBoostStandardClassifier;
+import vkmbox.classifier.adaboost.AdaBoostStandardClassifier;
 
 /**
  *
